@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/box.tsx","./src/components/currency.tsx","./src/components/reversecurrency.tsx","./src/lib/usecovertcurrency.tsx","./src/lib/usefetchcurrencies.tsx","./src/types/url.ts","./src/types/props/script.ts"],"version":"5.6.3"}
