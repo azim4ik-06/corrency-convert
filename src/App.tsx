@@ -19,7 +19,9 @@ export default function App() {
   );
 
   useEffect(() => {
-    convertCurrency();
+    if (fromAmount > 0 && toCurrency !== "") {
+      convertCurrency();
+    }
   }, [fromCurrency, toCurrency, fromAmount, convertCurrency]);
 
   const handleFromCurrencyChange = (currency: string) => {
@@ -32,6 +34,11 @@ export default function App() {
     if (currency !== fromCurrency) {
       setToCurrency(currency);
     }
+  };
+
+  const handleAmountChange = (amount: number) => {
+    setFromAmount(amount);
+    setToAmount(amount > 0 ? toAmount : 0);
   };
 
   const handleSwapCurrencies = () => {
@@ -54,7 +61,7 @@ export default function App() {
             currencies={currencies}
             title="From"
             amount={fromAmount}
-            setAmount={setFromAmount}
+            setAmount={handleAmountChange}
           />
           <ReverseCurrency swapCurrencies={handleSwapCurrencies} />
           <Currency

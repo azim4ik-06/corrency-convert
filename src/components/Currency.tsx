@@ -1,5 +1,5 @@
-import { CurrencyProps } from "../types/props/script";
 import { useEffect } from "react";
+import { CurrencyProps } from "../types/props/script";
 
 export default function Currency({
   title,
@@ -10,14 +10,14 @@ export default function Currency({
   setAmount,
 }: CurrencyProps) {
 
-
+  
   useEffect(() => {
     setAmount(parseFloat(amount.toFixed(2)));
   }, [amount, setAmount]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    setAmount(isNaN(value) ? 0 : value);
+    const value = e.target.value === "" ? "" : parseFloat(e.target.value);
+    setAmount(value !== "" && !isNaN(value) ? value : 0);
   };
 
   return (
@@ -31,7 +31,7 @@ export default function Currency({
       <div className="mt-1 relative">
         <div className="flex overflow-hidden p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
           <input
-            value={amount.toString()}
+            value={amount === 0 ? "" : amount.toString()}
             onChange={handleInputChange}
             type="number"
             step="0.01"
