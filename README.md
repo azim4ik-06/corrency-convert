@@ -27,7 +27,7 @@ A simple currency converter application built with React, TypeScript, and Tailwi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/azim4ik-06/corrency-converter.git
+   git clone https://github.com/azim4ik-06/corrency-convert.git
    cd currency-converter
    ```
 
@@ -78,7 +78,7 @@ A simple currency converter application built with React, TypeScript, and Tailwi
 1. Клонирование репозиторий:
 
    ```bash
-   git clone https://github.com/azim4ik-06/corrency-converter.git
+   git clone https://github.com/azim4ik-06/corrency-convert.git
    cd currency-converter
 
    ```
